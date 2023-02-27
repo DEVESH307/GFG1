@@ -12,10 +12,11 @@ class Solution{
     int findFloor(vector<long long> arr, long long n, long long x){
         // Your code here
         int ans = -1;
+        int mid;
         int low = 0;
         int high = n-1;
         while(low <= high){
-            int mid = (low+high)/2;
+            int mid = low+(high-low)/2;
             if(arr[mid] <= x){
                 ans = mid;
                 low = mid+1;
