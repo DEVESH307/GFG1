@@ -11,16 +11,28 @@ class Solution {
   public:
     bool arraySortedOrNot(int arr[], int n) {
         // code here
-        bool ans = true;
-        for(int i = 0; i < n-1; i++){
-            if(arr[i+1] < arr[i]){
-                ans = false;
-                break;
-            }
-        }
-        return ans;
+        if(n == 0 || n == 1) return true;
+        if(arr[n-1] < arr[n-2]) return false;
+        return arraySortedOrNot(arr, n-1);
     }
 };
+
+// class Solution {
+//   public:
+//     bool arraySortedOrNot(int arr[], int n) {
+//         // code here
+//         bool ans = true;
+//         for(int i = 0; i < n-1; i++){
+//             if(arr[i+1] < arr[i]){
+//                 ans = false;
+//                 break;
+//             }
+//         }
+//         return ans;
+//     }
+// };
+
+
 
 //{ Driver Code Starts.
 
